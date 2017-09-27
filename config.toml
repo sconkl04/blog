@@ -1,4 +1,4 @@
-baseurl = "https://sconklinblog.com/"
+baseurl = "https://sconklinblog.netlify.com/"
 languageCode = "en-us"
 title = "Sara Conklin's Blog"
 # Define how many pages appear per site
