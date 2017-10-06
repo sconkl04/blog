@@ -28,18 +28,18 @@ library(Lahman)library(sqldf)## Loading required package: gsubfn## Loading re
       <pubDate>Fri, 06 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://sconklinblog.netlify.com/post/scatterplots/</guid>
-      <description>library(Lahman)library(sqldf)## Loading required package: gsubfn## Loading required package: proto## Loading required package: RSQLitelibrary(ggplot2)Step 1: Extract the DataIn order to begin, we must fist bring into our Rmarkdown page the packages Lahman, sqldf, and ggplot2. We bring these in by using ‘library’ as shown above. We are then ready to extract our chosen data. We must do this and store the data in ‘result’ in order to link our scatterplot to the data we extracted.</description>
+      <description>Step 1: Implement the Required PackagesIn order to begin, we must first bring into our Rmarkdown page the packages Lahman, sqldf, and ggplot2. We obtain these packages byt going to tools and then installing the desired packages. We bring these in by using ‘library’ as shown below.
+library(Lahman)library(sqldf)## Loading required package: gsubfn## Loading required package: proto## Loading required package: RSQLitelibrary(ggplot2)Step 2: Extract the DataAfter installing the packages,and bringing them into the Rmarkdown through ‘library’, we are then ready to extract our chosen data.</description>
     </item>
     
     <item>
-      <title>Hello R Markdown</title>
-      <link>https://sconklinblog.netlify.com/post/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      <title>Time Series</title>
+      <link>https://sconklinblog.netlify.com/post/time-series/</link>
+      <pubDate>Fri, 06 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://sconklinblog.netlify.com/post/2015-07-23-r-rmarkdown/</guid>
-      <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+      <guid>https://sconklinblog.netlify.com/post/time-series/</guid>
+      <description>Step 1: Implement all PackagesTo get started, we must first install the packages Lahman, sqldf, and ggplot2. We do this by installing the packages through the tool tab, and then integrating them into Rmarkdown through ‘library’. Here it is shown:
+library(Lahman)library(sqldf)## Loading required package: gsubfn## Loading required package: proto## Loading required package: RSQLitelibrary(ggplot2)Step 2: Extract the DataIn this example, we would like to work with Time Series.</description>
     </item>
     
   </channel>

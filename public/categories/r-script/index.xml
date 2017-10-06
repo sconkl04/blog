@@ -18,7 +18,8 @@
       <pubDate>Fri, 06 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://sconklinblog.netlify.com/post/scatterplots/</guid>
-      <description>library(Lahman)library(sqldf)## Loading required package: gsubfn## Loading required package: proto## Loading required package: RSQLitelibrary(ggplot2)Step 1: Extract the DataIn order to begin, we must fist bring into our Rmarkdown page the packages Lahman, sqldf, and ggplot2. We bring these in by using ‘library’ as shown above. We are then ready to extract our chosen data. We must do this and store the data in ‘result’ in order to link our scatterplot to the data we extracted.</description>
+      <description>Step 1: Implement the Required PackagesIn order to begin, we must first bring into our Rmarkdown page the packages Lahman, sqldf, and ggplot2. We obtain these packages byt going to tools and then installing the desired packages. We bring these in by using ‘library’ as shown below.
+library(Lahman)library(sqldf)## Loading required package: gsubfn## Loading required package: proto## Loading required package: RSQLitelibrary(ggplot2)Step 2: Extract the DataAfter installing the packages,and bringing them into the Rmarkdown through ‘library’, we are then ready to extract our chosen data.</description>
     </item>
     
   </channel>

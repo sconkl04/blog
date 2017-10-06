@@ -13,18 +13,12 @@
   </url>
   
   <url>
-    <loc>https://sconklinblog.netlify.com/post/2015-07-23-r-rmarkdown/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
+    <loc>https://sconklinblog.netlify.com/post/time-series/</loc>
+    <lastmod>2017-10-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://sconklinblog.netlify.com/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://sconklinblog.netlify.com/tags/plot/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -35,26 +29,8 @@
   </url>
   
   <url>
-    <loc>https://sconklinblog.netlify.com/categories/r/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://sconklinblog.netlify.com/tags/r-markdown/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://sconklinblog.netlify.com/categories/r-script/</loc>
     <lastmod>2017-10-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://sconklinblog.netlify.com/tags/regression/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -66,7 +42,6 @@
   
   <url>
     <loc>https://sconklinblog.netlify.com/tags/</loc>
-    <lastmod>2015-07-23T21:13:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   

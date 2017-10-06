@@ -8,6 +8,10 @@ categories:
 tags: []
 ---
 
+## Step 1: Implement the Required Packages
+
+In order to begin, we must first bring into our Rmarkdown page the packages Lahman, sqldf, and ggplot2. We obtain these packages byt going to tools and then installing the desired packages. We bring these in by using 'library' as shown below. 
+
 ```{r}
 library(Lahman)
 library(sqldf)
@@ -15,9 +19,9 @@ library(ggplot2)
 
 ```
 
-## Step 1: Extract the Data
+## Step 2: Extract the Data
 
-In order to begin, we must fist bring into our Rmarkdown page the packages Lahman, sqldf, and ggplot2. We bring these in by using 'library' as shown above. We are then ready to extract our chosen data. We must do this and store the data in 'result' in order to link our scatterplot to the data we extracted.For instance, we might want to find the players who have career homeruns greater or equal to 400. We would write that like this: 
+After installing the packages,and bringing them into the Rmarkdown through 'library', we are then ready to extract our chosen data. We must do this and store the data in 'result' in order to link our scatterplot to the data we extracted.For instance, we might want to find the players who have career homeruns greater or equal to 400. We would write that like this: 
 
 ```{r}
 query<-"SELECT playerID,sum(HR) AS career_HR ,sum(SO) AS career_SO
@@ -28,9 +32,9 @@ HAVING sum(HR)>=400"
 result<-sqldf(query)
 ```
 
-## Step 2: Visualize the Data
+## Step 3: Visualize the Data
 
-After we have extracted the data and stored the data in 'result', we can now begin to vizualize said data. In order to do that, we will introduce a new package called ggplot. This package allows us to create differnt kinds of graphs. In this instance, we would like to create a scatterplot graph. We would write: 
+After we have extracted the data and stored the data in 'result', we can now begin to vizualize said data. In order to do that, we will introduce a new package called ggplot. This package allows us to create differnt kinds of graphs. In this instance, we would like to create a scatterplot graph. Because scatter plots use points we would designate geom_point for the code. Notice that we write that data=result, which means that we are pulling the data from the code that we wrote in the step above. Also notice that we use a + sign after each line. If we do not do this, the code would fail. We would write: 
 
 ```{r}
 ggplot()+

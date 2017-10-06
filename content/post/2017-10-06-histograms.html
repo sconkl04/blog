@@ -21,7 +21,7 @@ library(sqldf)</code></pre>
 </div>
 <div id="step-2-extract-the-data" class="section level2">
 <h2>Step 2: Extract the Data</h2>
-<p>We can now begin assembling our Histogram. For this to work, we have to first extract the desired data. For instance, say we wished to know the body-weight distribution for baseball players. We would write that as follows:</p>
+<p>We can now begin assembling our Histogram. For this to work, we have to first extract the desired data. It is important to note that we store the data in ‘result’. We do this so that in the next step we will have somewhere to pull the extracted data from. For instance, say we wished to know the body-weight distribution for baseball players. We would write that as follows:</p>
 <pre class="r"><code>query&lt;-&quot;SELECT weight 
 FROM Master&quot;
 
@@ -29,7 +29,7 @@ result&lt;-sqldf(query)</code></pre>
 </div>
 <div id="step-3-visualize-the-data" class="section level2">
 <h2>Step 3: Visualize the Data</h2>
-<p>We are now ready to visualize the data in the form of a histogram. We must use the gglot2 package, primarily. In order to let the package know what kind of graph we would like to use, we would write ‘geom_histogram’. Notice that we can dictate what we wish the x and y titles to be. We can also change the bin number in order to see our information more clearly. If we so wish, we can also change the color of the inside and of the outline of our bins. Let’s take a look:</p>
+<p>We are now ready to visualize the data in the form of a histogram. We must use the gglot2 package, primarily. In order to let the package know what kind of graph we would like to use, we would write ‘geom_histogram’. Notice that we can dictate what we wish the x and y titles to be. We can also change the bin number in order to see our information more clearly. If we so wish, we can also change the color of the inside and of the outline of our bins.Notice that we write that data=result, which means that we are pulling the data from the code that we wrote in the step above. We must remember to include a + sign after each line or the code will fail. Let’s take a look:</p>
 <pre class="r"><code>ggplot()+
   geom_histogram(data=result,aes(x=weight),color=&quot;blue&quot;, fill=&quot;white&quot;,bins=50)+
   ggtitle(&quot;Body-Weight Distibution for Baseball Players&quot;)</code></pre>

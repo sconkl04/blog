@@ -1,0 +1,48 @@
+---
+title: Time Series
+author: Sara Conklin
+date: '2017-10-06'
+slug: time-series
+categories: []
+tags: []
+---
+
+## Step 1: Implement all Packages
+
+To get started, we must first install the packages Lahman, sqldf, and ggplot2. We do this by installing the packages through the tool tab, and then integrating them into Rmarkdown through 'library'. Here it is shown: 
+
+```{r}
+library(Lahman)
+library(sqldf)
+library(ggplot2)
+```
+
+
+## Step 2: Extract the Data
+
+In this example, we would like to work with Time Series. Before we do anyhting that deals with the graph itself, we must first extract the data we wish to represent. When we extract the data, we must be sure to store the data in 'result'. We store the data in 'result' so that we have a place for the data to be extracted from in the next step. For instance, let's say we would like to find all the years that the player Babe Ruth hit home runs. We would extract that data by writing: 
+
+```{r}
+query<-"SELECT yearID,HR
+FROM Batting 
+WHERE playerID='ruthba01'"
+
+result<-sqldf(query)
+
+```
+
+
+## Step 3: Visualize the Data
+
+We are now ready to write the code to show our time series. We must remember that with a time series graph, the x axis always relates to some point in time. In our case, we will be using years for the x axis. We have the option of showing the data with just a line, just points, or points and a line. In this example, we chose to show the data with just a line. Notice that we first wrote geom_point to see what the our graph would look like with points, but decided we liked the line better. We used a # sign in order to comment out that line.Moreover, take note that we write that data=result, which means that we are pulling the data from the code that we wrote in the step above.Also notice that after every line we wrote, we used a + sign.  This is an important part of the code, and if it is not used then the code will fail to work. Let's take a look: 
+
+```{r}
+ggplot()+
+  #geom_point(data=result,aes(x=yearID,y=HR))+
+  geom_line(data=result,aes(x=yearID,y=HR))+
+  ggtitle("Ruth's Homerun Totals THrough the Years")+
+  xlab("year")+
+  ylab("homeruns")
+
+```
+

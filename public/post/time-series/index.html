@@ -45,7 +45,7 @@
         <article class="post">
             <a class="btn home" href="https://sconklinblog.netlify.com/" title="Back to home">&laquo; Back to home</a>
             
-<h1><a href="https://sconklinblog.netlify.com/post/histograms/" title="Histograms">Histograms</a></h1>
+<h1><a href="https://sconklinblog.netlify.com/post/time-series/" title="Time Series">Time Series</a></h1>
 
 <footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.10.06">2017.10.06</time>
 
@@ -54,9 +54,9 @@
 </span>
 </footer>
 
-            <div id="step-1-bring-in-packages" class="section level2">
-<h2>Step 1: Bring in Packages</h2>
-<p>In order to start the process, we must first obtain the Lahman, sqldf, and ggplot2 packages. Once obtained, we must bring the packages through ‘library’. We do this as follows:</p>
+            <div id="step-1-implement-all-packages" class="section level2">
+<h2>Step 1: Implement all Packages</h2>
+<p>To get started, we must first install the packages Lahman, sqldf, and ggplot2. We do this by installing the packages through the tool tab, and then integrating them into Rmarkdown through ‘library’. Here it is shown:</p>
 <pre class="r"><code>library(Lahman)
 library(sqldf)</code></pre>
 <pre><code>## Loading required package: gsubfn</code></pre>
@@ -66,20 +66,23 @@ library(sqldf)</code></pre>
 </div>
 <div id="step-2-extract-the-data" class="section level2">
 <h2>Step 2: Extract the Data</h2>
-<p>We can now begin assembling our Histogram. For this to work, we have to first extract the desired data. It is important to note that we store the data in ‘result’. We do this so that in the next step we will have somewhere to pull the extracted data from. For instance, say we wished to know the body-weight distribution for baseball players. We would write that as follows:</p>
-<pre class="r"><code>query&lt;-&quot;SELECT weight 
-FROM Master&quot;
+<p>In this example, we would like to work with Time Series. Before we do anyhting that deals with the graph itself, we must first extract the data we wish to represent. When we extract the data, we must be sure to store the data in ‘result’. We store the data in ‘result’ so that we have a place for the data to be extracted from in the next step. For instance, let’s say we would like to find all the years that the player Babe Ruth hit home runs. We would extract that data by writing:</p>
+<pre class="r"><code>query&lt;-&quot;SELECT yearID,HR
+FROM Batting 
+WHERE playerID=&#39;ruthba01&#39;&quot;
 
 result&lt;-sqldf(query)</code></pre>
 </div>
 <div id="step-3-visualize-the-data" class="section level2">
 <h2>Step 3: Visualize the Data</h2>
-<p>We are now ready to visualize the data in the form of a histogram. We must use the gglot2 package, primarily. In order to let the package know what kind of graph we would like to use, we would write ‘geom_histogram’. Notice that we can dictate what we wish the x and y titles to be. We can also change the bin number in order to see our information more clearly. If we so wish, we can also change the color of the inside and of the outline of our bins.Notice that we write that data=result, which means that we are pulling the data from the code that we wrote in the step above. We must remember to include a + sign after each line or the code will fail. Let’s take a look:</p>
+<p>We are now ready to write the code to show our time series. We must remember that with a time series graph, the x axis always relates to some point in time. In our case, we will be using years for the x axis. We have the option of showing the data with just a line, just points, or points and a line. In this example, we chose to show the data with just a line. Notice that we first wrote geom_point to see what the our graph would look like with points, but decided we liked the line better. We used a # sign in order to comment out that line.Moreover, take note that we write that data=result, which means that we are pulling the data from the code that we wrote in the step above.Also notice that after every line we wrote, we used a + sign. This is an important part of the code, and if it is not used then the code will fail to work. Let’s take a look:</p>
 <pre class="r"><code>ggplot()+
-  geom_histogram(data=result,aes(x=weight),color=&quot;blue&quot;, fill=&quot;white&quot;,bins=50)+
-  ggtitle(&quot;Body-Weight Distibution for Baseball Players&quot;)</code></pre>
-<pre><code>## Warning: Removed 854 rows containing non-finite values (stat_bin).</code></pre>
-<p><img src="/post/2017-10-06-histograms_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+  #geom_point(data=result,aes(x=yearID,y=HR))+
+  geom_line(data=result,aes(x=yearID,y=HR))+
+  ggtitle(&quot;Ruth&#39;s Homerun Totals THrough the Years&quot;)+
+  xlab(&quot;year&quot;)+
+  ylab(&quot;homeruns&quot;)</code></pre>
+<p><img src="/post/2017-10-06-time-series_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
 
             
