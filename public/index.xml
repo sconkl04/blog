@@ -13,40 +13,22 @@
     
     
     <item>
+      <title>Histograms</title>
+      <link>https://sconklinblog.netlify.com/post/histograms/</link>
+      <pubDate>Fri, 06 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://sconklinblog.netlify.com/post/histograms/</guid>
+      <description>Step 1: Bring in PackagesIn order to start the process, we must first obtain the Lahman, sqldf, and ggplot2 packages. Once obtained, we must bring the packages through ‘library’. We do this as follows:
+library(Lahman)library(sqldf)## Loading required package: gsubfn## Loading required package: proto## Loading required package: RSQLitelibrary(ggplot2)Step 2: Extract the DataWe can now begin assembling our Histogram. For this to work, we have to first extract the desired data.</description>
+    </item>
+    
+    <item>
       <title>Scatterplots</title>
       <link>https://sconklinblog.netlify.com/post/scatterplots/</link>
       <pubDate>Fri, 06 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://sconklinblog.netlify.com/post/scatterplots/</guid>
-      <description>library(Lahman)library(sqldf)## Loading required package: gsubfn## Loading required package: proto## Loading required package: RSQLitelibrary(ggplot2)Step 1: Extracte the DataIn order to begin, we must first extracte the data. We must do this and store the data in ‘result’ in order to link your scatterplot to the data you extracted.For instance, we might want to find the players who have career homeruns greater or equal to 400.</description>
-    </item>
-    
-    <item>
-      <title>Go is for lovers</title>
-      <link>https://sconklinblog.netlify.com/post/go-is-for-lovers/</link>
-      <pubDate>Thu, 17 Sep 2015 13:47:08 +0200</pubDate>
-      
-      <guid>https://sconklinblog.netlify.com/post/go-is-for-lovers/</guid>
-      <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
-This document is a brief primer on using go templates.</description>
-    </item>
-    
-    <item>
-      <title>Hugo is for lovers</title>
-      <link>https://sconklinblog.netlify.com/post/hugo-is-for-lovers/</link>
-      <pubDate>Mon, 03 Aug 2015 13:39:46 +0200</pubDate>
-      
-      <guid>https://sconklinblog.netlify.com/post/hugo-is-for-lovers/</guid>
-      <description>&lt;h2 id=&#34;step-1-install-hugo&#34;&gt;Step 1. Install Hugo&lt;/h2&gt;
-
-&lt;p&gt;Goto &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;hugo releases&lt;/a&gt; and download the
-appropriate version for your os and architecture.&lt;/p&gt;
-
-&lt;p&gt;Save it somewhere specific as we will be using it in the next step.&lt;/p&gt;
-
-&lt;p&gt;More complete instructions are available at &lt;a href=&#34;https://sconklinblog.netlify.com/overview/installing/&#34;&gt;installing hugo&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>library(Lahman)library(sqldf)## Loading required package: gsubfn## Loading required package: proto## Loading required package: RSQLitelibrary(ggplot2)Step 1: Extract the DataIn order to begin, we must fist bring into our Rmarkdown page the packages Lahman, sqldf, and ggplot2. We bring these in by using ‘library’ as shown above. We are then ready to extract our chosen data. We must do this and store the data in ‘result’ in order to link our scatterplot to the data we extracted.</description>
     </item>
     
     <item>
@@ -58,34 +40,6 @@ appropriate version for your os and architecture.&lt;/p&gt;
       <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
 You can embed an R code chunk like this:
 summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
-    </item>
-    
-    <item>
-      <title>Creating a new theme</title>
-      <link>https://sconklinblog.netlify.com/post/creating-a-new-theme/</link>
-      <pubDate>Wed, 24 Jun 2015 13:50:46 +0200</pubDate>
-      
-      <guid>https://sconklinblog.netlify.com/post/creating-a-new-theme/</guid>
-      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
-We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://sconklinblog.netlify.com/post/migrate-from-jekyll/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://sconklinblog.netlify.com/post/migrate-from-jekyll/</guid>
-      <description>code{white-space: pre;}pre:not([class]) {background-color: white;}if (window.hljs &amp;&amp; document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) {window.setTimeout(function() {hljs.initHighlighting();}, 0);}h1 {font-size: 34px;}h1.title {font-size: 38px;}h2 {font-size: 30px;}h3 {font-size: 24px;}h4 {font-size: 18px;}h5 {font-size: 16px;}h6 {font-size: 12px;}.table th:not([align]) {text-align: left;}.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://sconklinblog.netlify.com/post/migrate-from-jekyll/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://sconklinblog.netlify.com/post/migrate-from-jekyll/</guid>
-      <description></description>
     </item>
     
   </channel>

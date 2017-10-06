@@ -15,9 +15,9 @@ library(ggplot2)
 
 ```
 
-## Step 1: Extracte the Data
+## Step 1: Extract the Data
 
-In order to begin, we must first extracte the data. We must do this and store the data in 'result' in order to link your scatterplot to the data you extracted.For instance, we might want to find the players who have career homeruns greater or equal to 400. We would write that like this: 
+In order to begin, we must fist bring into our Rmarkdown page the packages Lahman, sqldf, and ggplot2. We bring these in by using 'library' as shown above. We are then ready to extract our chosen data. We must do this and store the data in 'result' in order to link our scatterplot to the data we extracted.For instance, we might want to find the players who have career homeruns greater or equal to 400. We would write that like this: 
 
 ```{r}
 query<-"SELECT playerID,sum(HR) AS career_HR ,sum(SO) AS career_SO
