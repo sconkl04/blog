@@ -3,8 +3,8 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://sconklinblog.netlify.com/post/migrate-from-jekyll/</loc>
-    <lastmod>2015-10-10T13:07:31+02:00</lastmod>
+    <loc>https://sconklinblog.netlify.com/post/scatterplots/</loc>
+    <lastmod>2017-10-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -28,25 +28,21 @@
   </url>
   
   <url>
+    <loc>https://sconklinblog.netlify.com/post/migrate-from-jekyll/</loc>
+  </url>
+  
+  <url>
+    <loc>https://sconklinblog.netlify.com/post/migrate-from-jekyll/</loc>
+  </url>
+  
+  <url>
     <loc>https://sconklinblog.netlify.com/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://sconklinblog.netlify.com/tags/hugo/</loc>
-    <lastmod>2015-10-10T13:07:31+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://sconklinblog.netlify.com/tags/jekyll/</loc>
-    <lastmod>2015-10-10T13:07:31+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://sconklinblog.netlify.com/tags/migration/</loc>
-    <lastmod>2015-10-10T13:07:31+02:00</lastmod>
+    <lastmod>2015-08-03T13:39:46+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -58,7 +54,7 @@
   
   <url>
     <loc>https://sconklinblog.netlify.com/post/</loc>
-    <lastmod>2015-10-10T13:07:31+02:00</lastmod>
+    <lastmod>2017-10-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -75,6 +71,12 @@
   </url>
   
   <url>
+    <loc>https://sconklinblog.netlify.com/categories/r-script/</loc>
+    <lastmod>2017-10-06T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://sconklinblog.netlify.com/tags/regression/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
     <priority>0</priority>
@@ -82,13 +84,13 @@
   
   <url>
     <loc>https://sconklinblog.netlify.com/</loc>
-    <lastmod>2015-10-10T13:07:31+02:00</lastmod>
+    <lastmod>2017-10-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://sconklinblog.netlify.com/tags/</loc>
-    <lastmod>2015-10-10T13:07:31+02:00</lastmod>
+    <lastmod>2015-08-03T13:39:46+02:00</lastmod>
     <priority>0</priority>
   </url>
   

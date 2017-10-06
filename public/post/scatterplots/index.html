@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Tags &middot; Sara Conklin&#39;s Blog</title>
+        <title>Sara Conklin&#39;s Blog</title>
         <meta name="author">
         <meta name="description" content="Quick R Tutorials">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -39,29 +39,52 @@
           </div>
         </header>
 
+
 <div class="container clearfix">
     <main role="main" class="content">
-    <a class="btn home" href="https://sconklinblog.netlify.com/" title="Back to home">&laquo; Back to home</a>
-    <h2>Tags:</a>
-    <ul>
-     
-        <li>
-            <a href="hugo">hugo (1)</a>
-        </li>
+        <article class="post">
+            <a class="btn home" href="https://sconklinblog.netlify.com/" title="Back to home">&laquo; Back to home</a>
+            
+<h1><a href="https://sconklinblog.netlify.com/post/scatterplots/" title="Scatterplots">Scatterplots</a></h1>
+
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.10.06">2017.10.06</time>
+
     
-        <li>
-            <a href="plot">plot (1)</a>
-        </li>
-    
-        <li>
-            <a href="r-markdown">r-markdown (1)</a>
-        </li>
-    
-        <li>
-            <a href="regression">regression (1)</a>
-        </li>
-    
-    </ul>
+
+</span>
+</footer>
+
+            <pre class="r"><code>library(Lahman)
+library(sqldf)</code></pre>
+<pre><code>## Loading required package: gsubfn</code></pre>
+<pre><code>## Loading required package: proto</code></pre>
+<pre><code>## Loading required package: RSQLite</code></pre>
+<pre class="r"><code>library(ggplot2)</code></pre>
+<div id="step-1-extracte-the-data" class="section level2">
+<h2>Step 1: Extracte the Data</h2>
+<p>In order to begin, we must first extracte the data. We must do this and store the data in ‘result’ in order to link your scatterplot to the data you extracted.For instance, we might want to find the players who have career homeruns greater or equal to 400. We would write that like this:</p>
+<pre class="r"><code>query&lt;-&quot;SELECT playerID,sum(HR) AS career_HR ,sum(SO) AS career_SO
+FROM Batting
+GROUP BY playerID
+HAVING sum(HR)&gt;=400&quot;
+
+result&lt;-sqldf(query)</code></pre>
+</div>
+<div id="step-2-visualize-the-data" class="section level2">
+<h2>Step 2: Visualize the Data</h2>
+<p>After we have extracted the data and stored the data in ‘result’, we can now begin to vizualize said data. In order to do that, we will introduce a new package called ggplot. This package allows us to create differnt kinds of graphs. In this instance, we would like to create a scatterplot graph. We would write:</p>
+<pre class="r"><code>ggplot()+
+  geom_point(data=result,aes(x=career_SO,y=career_HR), size=3, color=&quot;blue&quot;)+
+  ggtitle(&quot;Career Strikeouts vs Homeruns for Great Hitters&quot;)+
+  xlab(&quot;Career Strikeouts&quot;)+
+  ylab(&quot;Career Homeruns&quot;)</code></pre>
+<p><img src="/post/2017-10-06-scatterplots_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+
+            
+
+        </article>
+        
     </main>
     <aside class="author">
   <img class="profile-image" src="https://sconklinblog.netlify.com/img/finalprofile.jpg" alt="Sara Conklin" />
@@ -95,6 +118,7 @@
 </aside>
 
 </div>
+
 <footer class="main-footer">
   <div class="container clearfix">
         <a class="icon-rss" href="https://sconklinblog.netlify.com/post/index.xml" title="RSS"></a>

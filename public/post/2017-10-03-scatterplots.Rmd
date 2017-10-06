@@ -27,6 +27,12 @@ HAVING sum(HR)=400"
 
 result<-sqldf(query)
 
+ggplot()+
+  geom_point(data=result,aes(x=career_SO,y=career_HR), size=3, color="blue")+
+  ggtitle("Career Strikeouts vs Homeruns for Great Hitters")+
+  xlab("Career Strikeouts")+
+  ylab("Career Homeruns")
+
 ```
 
 
@@ -34,12 +40,4 @@ result<-sqldf(query)
 
 ## Step 2: Visualize the Data
 Next, we will use the data we extracted in step one to visualize the data through a scatter plot. In order to do this, We had to install the ggplot2 package. Other packages installed include sqldf and Lahman. Notice that you can change the color of the scatterplot as well as the size of the points. You can also change the x and y axis.If you wish to make changes, simply go back to the above code, make changes, and run the code again. We do this by writing: 
-
-```{r}
-ggplot()+
-  geom_point(data=result,aes(x=career_SO,y=career_HR), size=3, color="blue")+
-  ggtitle("Career Strikeouts vs Homeruns for Great Hitters")+
-  xlab("Career Strikeouts")+
-  ylab("Career Homeruns")
-```
 
