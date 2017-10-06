@@ -1,0 +1,147 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Sara Conklin&#39;s Blog</title>
+        <meta name="author">
+        <meta name="description" content="Quick R Tutorials">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.27.1" />
+        <link href="https://sconklinblog.netlify.com/post/index.xml" rel="alternate" type="application/rss+xml" title="Sara Conklin&#39;s Blog" />
+        <link href="https://sconklinblog.netlify.com/post/index.xml" rel="feed" type="application/rss+xml" title="Sara Conklin&#39;s Blog" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://sconklinblog.netlify.com/css/styles.css">
+        <link rel="icon" href="https://sconklinblog.netlify.com/favicon.ico">
+        <link rel="apple-touch-icon" href="https://sconklinblog.netlify.com/apple-touch-icon.png" />
+        <link rel="stylesheet" href="https://sconklinblog.netlify.com/css/highlightjs/monokai.css">
+        <script src="https://sconklinblog.netlify.com/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(https://sconklinblog.netlify.com/img/finalcover.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(https://sconklinblog.netlify.com/img/finalcover.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(https://sconklinblog.netlify.com/img/finalcover.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2>Sara&#39;s Data Science Blog</h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://sconklinblog.netlify.com/" title="Back to home">&laquo; Back to home</a>
+            
+<h1><a href="https://sconklinblog.netlify.com/post/bar-plot/" title="Bar Plot">Bar Plot</a></h1>
+
+<footer class="post-info">Posted on <span class="post-meta"><time datetime="2017.10.06">2017.10.06</time>
+
+    
+
+</span>
+</footer>
+
+            <div id="step-1-implement-the-needed-packages" class="section level2">
+<h2>Step 1: Implement the Needed Packages</h2>
+<p>In order to begin, we must obtain the needed packages. These package include Lahman, sqldf, and ggplot2. In order to obtain them, we will need to go to the Tools tab and then to Install Packages. Once installed, we must bring them into our Rmarkdown through ‘library’. Here it is shown:</p>
+<pre class="r"><code>library(Lahman)
+library(sqldf)</code></pre>
+<pre><code>## Loading required package: gsubfn</code></pre>
+<pre><code>## Loading required package: proto</code></pre>
+<pre><code>## Loading required package: RSQLite</code></pre>
+<pre class="r"><code>library(ggplot2)</code></pre>
+</div>
+<div id="step-2-extract-the-data" class="section level2">
+<h2>Step 2: Extract the Data</h2>
+<p>After the packages are brought into Rmarkdown, we are ready to begin. We must extract the data and place it into ‘result’. We do this so that we can pull the data from ‘result’ in the next step. Say we would like to find the homeruns that each team in the MLB had in the year 1980. It is important to write the very last line shown, so that the code knows what order to place the information in. Let’s take a look:</p>
+<pre class="r"><code>query&lt;-&quot;SELECT name,HR
+FROM Teams
+WHERE yearID=1980
+ORDER BY HR&quot;
+
+result&lt;-sqldf(query)
+
+result$name&lt;-factor(result$name,levels=result$name)</code></pre>
+</div>
+<div id="step-3-visualize-the-data" class="section level2">
+<h2>Step 3: Visualize the Data</h2>
+<p>We can now visualize the data in the form of a bar plot. We do this by writing geom_bar. Notice that after each line we write a + sign. This is a very important aspect. If not implemented, the code will not work. Notice that we can create a title, and assign titles to the x and y axis. Moreover, take note that we write that data=result, which means that we are pulling the data from the code that we wrote in the step above. Let’s take a look:</p>
+<pre class="r"><code>ggplot()+
+  geom_bar(data=result,aes(x=name,y=HR),stat=&#39;identity&#39;,color=&#39;blue&#39;,fill=&#39;white&#39;)+
+  coord_flip()+
+  ylab(&quot;homeruns&quot;)+
+  xlab(&quot;team&quot;)+
+  ggtitle(&quot;1980 Team Homeruns Distribution&quot;)</code></pre>
+<p><img src="/post/2017-10-06-bar-plot_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+
+            
+
+        </article>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="https://sconklinblog.netlify.com/img/finalprofile.jpg" alt="Sara Conklin" />
+  <p class="name">by 
+  <strong>Sara Conklin</strong></p>
+  <p class="address">Mercyhurst University</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/sconkl04" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://sconklinblog.netlify.com/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="https://sconklinblog.netlify.com/post/index.xml" title="RSS"></a>
+        <p>&copy; 2017 &middot; Powered by <a href="http://gohugo.io">Hugo</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/sconklinblog.netlify.com\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://sconklinblog.netlify.com/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

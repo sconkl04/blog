@@ -1,0 +1,51 @@
+---
+title: Bar Plot
+author: Sara Conklin
+date: '2017-10-06'
+slug: bar-plot
+categories: []
+tags: []
+---
+
+## Step 1: Implement the Needed Packages
+
+In order to begin, we must obtain the needed packages. These package include Lahman, sqldf, and ggplot2. In order to obtain them, we will need to go to the Tools tab and then to Install Packages. Once installed, we must bring them into our Rmarkdown through 'library'. Here it is shown: 
+
+```{r}
+library(Lahman)
+library(sqldf)
+library(ggplot2)
+```
+
+
+## Step 2: Extract the Data
+
+After the packages are brought into Rmarkdown, we are ready to begin. We must extract the data and place it into 'result'. We do this so that we can pull the data from 'result' in the next step. Say we would like to find the homeruns that each team in the MLB had in the year 1980. It is important to write the very last line shown, so that the code knows what order to place the information in. Let's take a look: 
+
+```{r}
+query<-"SELECT name,HR
+FROM Teams
+WHERE yearID=1980
+ORDER BY HR"
+
+result<-sqldf(query)
+
+result$name<-factor(result$name,levels=result$name)
+
+```
+
+
+## Step 3: Visualize the Data
+
+We can now visualize the data in the form of a bar plot. We do this by writing geom_bar. Notice that after each line we write a + sign. This is a very important aspect. If not implemented, the code will not work. Notice that we can create a title, and assign titles to the x and y axis. Moreover, take note that we write that data=result, which means that we are pulling the data from the code that we wrote in the step above. Let's take a look: 
+
+```{r}
+ggplot()+
+  geom_bar(data=result,aes(x=name,y=HR),stat='identity',color='blue',fill='white')+
+  coord_flip()+
+  ylab("homeruns")+
+  xlab("team")+
+  ggtitle("1980 Team Homeruns Distribution")
+
+```
+

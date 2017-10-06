@@ -13,6 +13,16 @@
     
     
     <item>
+      <title>Bar Plot</title>
+      <link>https://sconklinblog.netlify.com/post/bar-plot/</link>
+      <pubDate>Fri, 06 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://sconklinblog.netlify.com/post/bar-plot/</guid>
+      <description>Step 1: Implement the Needed PackagesIn order to begin, we must obtain the needed packages. These package include Lahman, sqldf, and ggplot2. In order to obtain them, we will need to go to the Tools tab and then to Install Packages. Once installed, we must bring them into our Rmarkdown through ‘library’. Here it is shown:
+library(Lahman)library(sqldf)## Loading required package: gsubfn## Loading required package: proto## Loading required package: RSQLitelibrary(ggplot2)Step 2: Extract the DataAfter the packages are brought into Rmarkdown, we are ready to begin.</description>
+    </item>
+    
+    <item>
       <title>Histograms</title>
       <link>https://sconklinblog.netlify.com/post/histograms/</link>
       <pubDate>Fri, 06 Oct 2017 00:00:00 +0000</pubDate>
